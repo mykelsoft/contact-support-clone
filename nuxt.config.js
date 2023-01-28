@@ -56,6 +56,25 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
+        '@nuxtjs/axios',
+        [
+            'nuxt-mail',
+            {
+                message: {
+                    name: 'support',
+                    to: 'michael.jumoc@ustp.edu.ph',
+                },
+                smtp: {
+                    service: 'gmail',
+                    host: 'smtp.gmail.com',
+                    port: 993,
+                    auth: {
+                        user: 'michaeljumoc@gmail.com',
+                        pass: 'vjooxlnjqsnmybbo',
+                    },
+                },
+            },
+        ],
     ],
 
     // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -24,12 +24,12 @@
                 <div class="v-input__slot secondary">
                     <div class="v-text-field__slot">
                         <input
+                            type="text"
                             :required="isRequired"
-                            autofocus
-                            :type="type"
                             @focus="focusEnable"
                             @blur="focusDisable"
-                            v-model="currentValue"
+                            :value="value"
+                            @input="$emit('update', $event.target.value)">
                         />
                     </div>
                 </div>
@@ -50,10 +50,6 @@ export default {
             type: String,
             default: '',
         },
-        type: {
-            type: String,
-            default: 'text',
-        },
         value: {
             type: [Number, String],
             default: '',
@@ -63,10 +59,13 @@ export default {
             default: true,
         }
     },
+    model: {
+        prop: 'value',
+        event: 'update'
+    },
     data: function () {
         return {
             isFocus: false,
-            currentValue: this.value,
         }
     },
     methods: {
