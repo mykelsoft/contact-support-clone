@@ -1,7 +1,7 @@
 <template>
     <div class="footer p-3">
-        <div class="flex py-4 px-16">
-            <div class="grow pr-16">
+        <div class="md:flex pt-4 lg:pb-4 sm:pb-8 pb-4 lg:px-16">
+            <div class="grow md:pr-16">
                 <div class="main-links flex">
                     <div>
                         <p class="font-weight-bold mb-2 uppercase">Help</p>
@@ -50,11 +50,11 @@
                     </div>
                 </div>
             </div>
-            <div class="shrink">
+            <div class="shrink md:pt-0 pt-6">
                 <p class="font-weight-bold mb-2 uppercase">
                     Join Our Community
                 </p>
-                <div class="social">
+                <div class="social md:grid grid-cols-5 sm:flex grid">
                     <a
                         href="https://twitter.com/GoGalaGames"
                         target="_blank"
@@ -108,20 +108,20 @@
                 </div>
             </div>
         </div>
-        <div class="flex copywrite-container pl-3">
+        <div class="flex copywrite-container lg:pl-3">
             <div class="mr-4 mb-2">
-                <span>© 2021 Gala Games</span> <span class="mx-3">•</span>
-                <a href="https://app.gala.games/terms-and-conditions" class="pointer">
+                <span>&copy; 2021 Gala Games</span> <span class="mx-3 sm:inline-block hidden">•</span>
+                <a href="https://app.gala.games/terms-and-conditions" class="pointer sm:inline-block hidden">
                     Terms and Conditions
                 </a>
-                <span class="mx-3">•</span>
-                <a href="/https://app.gala.games/terms-and-conditions" class="pointer"> Privacy Policy </a>
-                <span class="mx-3">•</span>
-                <a onclick="UC_UI.showSecondLayer();" class="pointer">
+                <span class="mx-3 sm:inline-block hidden">•</span>
+                <a href="/https://app.gala.games/terms-and-conditions" class="pointer sm:inline-block hidden"> Privacy Policy </a>
+                <span class="mx-3 sm:inline-block hidden">•</span>
+                <a onclick="UC_UI.showSecondLayer();" class="pointer sm:inline-block hidden">
                     Privacy Settings
                 </a>
-                <span class="mx-3">•</span>
-                <a href="https://app.gala.games/launcher-eula" class="pointer"> Launcher EULA </a>
+                <span class="mx-3 sm:inline-block hidden">•</span>
+                <a href="https://app.gala.games/launcher-eula" class="pointer sm:inline-block hidden"> Launcher EULA </a>
             </div>
             <div class="language-switch-container mb-2">
                 <p class="mr-2 mb-0">Language:</p>

@@ -57,7 +57,6 @@
                         <span class="medium-font pr-3 leading-[1px]">Join Discord</span>
                     </a>
                 </div>
-                <div class="grow sm:block hidden"></div>
                 <div class="login-register-container flex items-center h-full textColor--text">
                     <button class="gala-btn colored medium outline outline-0 font-weight-regular mr-4 accentBlue--text register-btn account-creation-start-btn">
                         Register

@@ -351,6 +351,21 @@ button {
         color: #000 !important;
         caret-color: #000 !important;
     }
+
+    .accentLight--text {
+        color: var(--v-accentLight-base) !important;
+        caret-color: var(--v-accentLight-base) !important;
+    }
+
+    .accentBlueDark--text {
+        color: var(--v-accentBlueDark-base) !important;
+        caret-color: var(--v-accentBlueDark-base) !important;
+    }
+
+    .modalBackground {
+        background-color: var(--v-modalBackground-base) !important;
+        border-color: var(--v-modalBackground-base) !important;
+    }
 }
 
 .v-toolbar {
@@ -396,8 +411,12 @@ button {
     }
 
     &__items {
-        display: flex;
+        display: none;
         height: inherit;
+
+        @media (min-width: 1101px) {
+            display: flex;
+        }
     }
 
     &__items > .v-btn {
@@ -508,6 +527,12 @@ button {
     background-color: #272727;
 }
 
+.theme--dark.v-btn--active:before,
+.theme--dark.v-btn--active:hover:before,
+.theme--dark.v-btn:focus:before {
+    opacity: 0.24;
+}
+
 .v-app-bar.v-app-bar--fixed {
     position: fixed;
     top: 0;
@@ -594,6 +619,10 @@ button {
         background-color: transparent;
     }
 
+    & > &__content .v-icon {
+        color: inherit;
+    }
+
     &__content {
         align-items: center;
         color: inherit;
@@ -603,6 +632,16 @@ button {
         line-height: normal;
         position: relative;
         text-transform: capitalize;
+    }
+
+    &:not(.v-btn--round).v-size--default {
+        height: 36px;
+        min-width: 64px;
+        padding: 0 16px;
+    }
+
+    &:not(.v-btn--disabled) {
+        will-change: box-shadow;
     }
 }
 
@@ -642,20 +681,36 @@ button {
     }
 }
 
-.login-register-container > * {
-    cursor: pointer;
-}
+.login-register-container {
+    @media (min-width: 960px) {
+        margin-left: auto;
+    }
 
-.register-btn {
-    border-color: var(--v-accentBlue-base) !important;
-}
+    @media (max-width: 599px) {
+        font-size: 12px;
+    }
 
-.login-register-container > * {
-    cursor: pointer;
+    & > * {
+        cursor: pointer;
+    }
+
+    .register-btn {
+        border-color: var(--v-accentBlue-base) !important;
+    }
 }
 
 .discord-toolbar-link {
     height: 100%;
+
+    @media (max-width: 959px) {
+        margin-left: auto;
+    }
+
+    @media (max-width: 450px) {
+        span {
+            display: none;
+        }
+    }
 
     img {
         height: 2.2em;
@@ -702,6 +757,14 @@ h5 {
     position: relative;
     width: 100%;
 
+    @media (max-width: 639px) {
+        height: 160px;
+    }
+
+    @media (max-width: 499px) {
+        height: 30vw;
+    }
+
     h1 {
         line-height: 1.1em;
         font-size: 26px;
@@ -743,11 +806,24 @@ h5 {
         bottom: -30%;
     }
 
+    .background-check .hero-bg-check.row-bg {
+        height: 100%;
+        bottom: 0;
+        left: -2px;
+    }
+
     .background-check .hero-bg-check {
         height: 150%;
         position: absolute;
         bottom: -10%;
         left: 0;
+    }
+
+    .place-holder {
+        width: 1px;
+        margin-left: -1px;
+        float: left;
+        height: 0;
     }
 }
 
@@ -1053,6 +1129,12 @@ h1 {
     color: var(--v-modalBackground-base) !important;
 }
 
+.v-icon__component,
+.v-icon__svg {
+    height: 24px;
+    width: 24px;
+}
+
 .v-icon.v-icon {
     align-items: center;
     display: inline-flex;
@@ -1123,8 +1205,101 @@ h1 {
     border-color: currentColor !important;
 }
 
+.v-item-group.v-bottom-navigation--fixed {
+    position: fixed;
+}
+
+.v-item-group.v-bottom-navigation--absolute,
+.v-item-group.v-bottom-navigation--fixed {
+    z-index: 4;
+}
+
+.v-item-group.v-bottom-navigation {
+    bottom: 0;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
+        0 1px 10px 0 rgb(0 0 0 / 12%);
+
+    @media (min-width: 1101px) {
+        display: none;
+    }
+}
+
+.theme--dark.v-bottom-navigation {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+.theme--dark.v-bottom-navigation .v-btn:not(.v-btn--active) {
+    color: hsla(0, 0%, 100%, 0.7) !important;
+}
+
+.v-bottom-navigation {
+    padding-bottom: env(safe-area-inset-bottom);
+    height: auto !important;
+}
+
+.v-item-group {
+    flex: 0 1 auto;
+    position: relative;
+    max-width: 100%;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.v-item-group.v-bottom-navigation .v-btn.v-btn--active {
+    color: inherit;
+}
+
+.v-item-group.v-bottom-navigation .v-btn {
+    border-radius: 0;
+    box-shadow: none;
+    flex: 0 1 auto;
+    font-size: 0.75rem;
+    height: inherit;
+    max-width: 168px;
+    min-width: 80px;
+    position: relative;
+    text-transform: none;
+}
+
+.v-item-group.v-bottom-navigation .v-btn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.v-item-group.v-bottom-navigation .v-btn.v-btn--active:not(:hover):before {
+    opacity: 0;
+}
+
+.v-item-group.v-bottom-navigation .v-btn .v-btn__content {
+    flex-direction: column-reverse;
+    height: inherit;
+}
+
+.v-item-group.v-bottom-navigation .v-btn .v-btn__content > :not(.v-icon) {
+    line-height: 1.2;
+}
+
+.v-item-group.v-bottom-navigation .v-btn .v-btn__content i.v-icon {
+    margin-bottom: 2px;
+}
+
 .footer {
     background: #383a45;
+    margin-bottom: 70px;
+
+    @media (min-width: 1101px) {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+        .main-links a {
+            font-size: 13px;
+        }
+    }
 
     .main-links a:not(:first-child),
     .main-links p:not(:first-child) {
@@ -1179,8 +1354,8 @@ h1 {
     }
 
     .social {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        // display: grid;
+        // grid-template-columns: repeat(5, 1fr);
         grid-gap: 16px;
 
         a {
@@ -1221,4 +1396,27 @@ h1 {
 
 .normal-flag {
     transform: scale(0.5);
+}
+
+.store-icon {
+    fill: currentColor;
+}
+
+.games-icon {
+    fill: currentColor;
+}
+
+.node-icon {
+    fill: currentColor;
+}
+
+#Games-nav-btn span.v-icon,
+#Games-nav-btn span.v-icon svg {
+    font-size: 40px !important;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+#Games-nav-btn span.v-icon {
+    padding-bottom: 4px;
 }

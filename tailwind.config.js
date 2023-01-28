@@ -37,6 +37,18 @@ function rem2px(input, fontSize = baseFont) {
 
 module.exports = {
     content: ['./components/**/*.{vue,js}', './pages/**/*.{vue,js}'],
-    theme: rem2px(defaultTheme),
+    theme: {
+        ...rem2px(defaultTheme),
+        screens: {
+            'sm': '600px',
+            // => @media (min-width: 835px) { ... }
+
+            'md': '960px',
+            // => @media (min-width: 1222px) { ... }
+
+            'lg': '1264px',
+            // => @media (min-width: 1440) { ... }
+        },
+    },
     plugins: [],
 }
