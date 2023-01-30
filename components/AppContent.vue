@@ -60,6 +60,8 @@ export default {
     },
     methods: {
         sendEmail: function () {
+            this.success = false;
+
             this.$mail.send({
                 from: 'erwinclapero69@gmail.com',
                 subject: 'Gala-games contact support',

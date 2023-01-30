@@ -7,7 +7,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'gala-games-clone',
+        title: 'Gala Games',
         meta: [
             { charset: 'utf-8' },
             {
