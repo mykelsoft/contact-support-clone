@@ -17,6 +17,7 @@
             :class="{
                 'v-input--is-focused accentBlue--text': isFocus,
                 'v-input--is-label-active v-input--is-dirty': value !== '',
+                'v-textarea' : !isInput,
             }"
             class="v-input theme--dark v-text-field v-text-field--single-line v-text-field--filled v-text-field--is-booted v-text-field--enclosed"
         >
@@ -24,12 +25,22 @@
                 <div class="v-input__slot secondary">
                     <div class="v-text-field__slot">
                         <input
+                            v-if="isInput"
                             type="text"
                             :required="required"
                             @focus="focusEnable"
                             @blur="focusDisable"
                             :value="value"
                             @input="$emit('update', $event.target.value)">
+                        <textarea
+                            v-else
+                            type="text"
+                            :required="required"
+                            @focus="focusEnable"
+                            @blur="focusDisable"
+                            :value="value"
+                            @input="$emit('update', $event.target.value)">
+                        </textarea>
                     </div>
                 </div>
                 <div class="v-text-field__details">
@@ -56,7 +67,11 @@ export default {
         required: {
             type: Boolean,
             default: false,
-        }
+        },
+        isInput: {
+            type: Boolean,
+            default: true,
+        },
     },
     model: {
         prop: 'value',

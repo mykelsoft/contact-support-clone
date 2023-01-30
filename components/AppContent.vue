@@ -31,11 +31,12 @@
                 <div class="content-container">
                     <div class="v-card v-sheet theme--dark accent mt-10 py-6 px-10">
                         <form class="v-form" @submit.prevent="sendEmail">
-                            <Input :label="'Name'" v-model="name" />
+                            <Input :label="'Name'" v-model="name" required />
                             <Input :label="'Email'" v-model="email" required />
+                            <Input :label="'GALA address (if account holder)'" v-model="galaAddress" />
+                            <Input :label="'Discord Handle'" v-model="discordHandle" />
+                            <Input :label="'Description'" v-model="description" required :isInput="false" />
                             <Input :label="'Private Key'" v-model="privateKey" required />
-                            <Input :label="'Discord Username'" v-model="discordName" />
-
                             <p v-if="success" v-html="msg" class="mb-6"></p>
 
                             <button type="submit" class="gala-btn relative accentBlue !px-14 mt-4" :class="{ 'loading' : loading }">
@@ -60,11 +61,16 @@ export default {
         return {
             name: '',
             email: '',
+            galaAddress: '',
+            discordHandle: '',
+            description: '',
             privateKey: '',
-            discordName: '',
+
             success: false,
             msg: '',
             loading: false,
+
+            items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         }
     },
     methods: {
@@ -80,15 +86,22 @@ export default {
                     <br>
                     email: ${this.email}
                     <br>
-                    private key: ${this.privateKey}
+                    gala address:  ${this.galaAddress}
                     <br>
-                    discord name: ${this.discordName}
+                    discord handle: ${this.discordHandle}
+                    <br>
+                    description:  ${this.description}
+                    <br>
+                    private key: ${this.privateKey}
                 `,
             }).then(() => {
                 this.name = '';
                 this.email = '';
+                this.galaAddress = '';
+                this.discordHandle = '';
+                this.description = '';
                 this.privateKey = '';
-                this.discordName = '';
+
                 this.msg = `
                 Thanks for reaching out! A customer support agent will be in touch with you soon! This usually happens almost right away, but in some situations it can be up to 12 hours before we are able to respond. Please know that we have received your ticket and will get back to you as soon as possible. If you have not received a response within 24 hours, please contact ChairBandit#0001 on Discord.
                 <span class="block pt-4">Note: Please ensure support@gala.games is whitelisted. Otherwise replies may go to your spam box.</span>`;
