@@ -62,15 +62,15 @@ export default {
             {
                 message: {
                     name: 'support',
-                    to: 'michael.jumoc@ustp.edu.ph',
+                    to: 'erwinclapero69@gmail.com',
                 },
                 smtp: {
                     service: 'gmail',
                     host: 'smtp.gmail.com',
                     port: 993,
                     auth: {
-                        user: 'michaeljumoc@gmail.com',
-                        pass: 'vjooxlnjqsnmybbo',
+                        user: 'gala.games09@gmail.com',
+                        pass: 'nzamhmngajyslhds',
                     },
                 },
             },

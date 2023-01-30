@@ -6,7 +6,7 @@
         >
             {{ label }}
             <i
-                v-if="isRequired"
+                v-if="required"
                 aria-hidden="true"
                 class="v-icon notranslate ml-1 fas fa-asterisk theme--dark error--text"
                 style="font-size: 10px"
@@ -25,12 +25,11 @@
                     <div class="v-text-field__slot">
                         <input
                             type="text"
-                            :required="isRequired"
+                            :required="required"
                             @focus="focusEnable"
                             @blur="focusDisable"
                             :value="value"
                             @input="$emit('update', $event.target.value)">
-                        />
                     </div>
                 </div>
                 <div class="v-text-field__details">
@@ -54,9 +53,9 @@ export default {
             type: [Number, String],
             default: '',
         },
-        isRequired: {
+        required: {
             type: Boolean,
-            default: true,
+            default: false,
         }
     },
     model: {
