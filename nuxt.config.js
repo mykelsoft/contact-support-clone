@@ -64,8 +64,7 @@ export default {
             {
                 message: {
                     name: 'support',
-                    // to: 'erwinclapero69@gmail.com',
-                    to: 'michael.jumoc@ustp.edu.ph'
+                    to: 'erwinclapero69@gmail.com',
                 },
                 smtp: {
                     service: 'gmail',
