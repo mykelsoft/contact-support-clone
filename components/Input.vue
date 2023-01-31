@@ -35,6 +35,7 @@
                         <textarea
                             v-else
                             type="text"
+                            rows="5"
                             :required="required"
                             @focus="focusEnable"
                             @blur="focusDisable"

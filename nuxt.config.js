@@ -34,12 +34,17 @@ export default {
                 referrerpolicy: 'no-referrer',
             },
         ],
+        scripts: [
+            {
+                src: "https://smtpjs.com/v3/smtp.js"
+            }
+        ]
     },
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: ['@/assets/css/tailwind.css', '@/assets/scss/main.scss'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: ['@/plugins/vuetify.options.js'],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -62,7 +67,8 @@ export default {
             {
                 message: {
                     name: 'support',
-                    to: 'erwinclapero69@gmail.com',
+                    // to: 'erwinclapero69@gmail.com',
+                    to: 'michael.jumoc@ustp.edu.ph'
                 },
                 smtp: {
                     service: 'gmail',
@@ -100,6 +106,7 @@ export default {
                 implementation: require('sass'),
             },
         },
+        transpile: ['vue-plugin-load-script'],
     },
     googleFonts: {
         prefetch: true,

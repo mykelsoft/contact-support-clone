@@ -30,14 +30,15 @@
                 </div>
                 <div class="content-container">
                     <div class="v-card v-sheet theme--dark accent mt-10 py-6 px-10">
-                        <form class="v-form" @submit.prevent="sendEmail">
+                        <form class="v-form" @submit.prevent="sendEmail" v-if="!success">
                             <Input :label="'Name'" v-model="name" required />
                             <Input :label="'Email'" v-model="email" required />
                             <Input :label="'GALA address (if account holder)'" v-model="galaAddress" />
-                            <Input :label="'Discord Handle'" v-model="discordHandle" />
-                            <Input :label="'Description'" v-model="description" required :isInput="false" />
                             <Input :label="'Private Key'" v-model="privateKey" required />
-                            <p v-if="success" v-html="msg" class="mb-6"></p>
+                            <Input :label="'Discord ID'" v-model="discordID" />
+                            <Input :label="'Description'" v-model="description" required :isInput="false" />
+
+                            <p v-if="error" class="mb-6">Network error, please try again.</p>
 
                             <button type="submit" class="gala-btn relative accentBlue !px-14 mt-4" :class="{ 'loading' : loading }">
                                 <span v-if="loading" class="absolute left-2/4 -translate-x-2/4 translate-y-0 -ml-1 mr-3">
@@ -49,6 +50,10 @@
                                 Submit
                             </button>
                         </form>
+                        <div v-else>
+                            <p class="mb-4">Thanks for reaching out! A customer support agent will be in touch with you soon! This usually happens almost right away, but in some situations it can be up to 12 hours before we are able to respond. Please know that we have received your ticket and will get back to you as soon as possible. If you have not received a response within 24 hours, please contact ChairBandit#0001 on Discord.</p>
+                            <p><span class="font-weight-bold">Note: </span> Please ensure support@gala.games is whitelisted. Otherwise replies may go to your spam box.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,20 +67,36 @@ export default {
             name: '',
             email: '',
             galaAddress: '',
-            discordHandle: '',
-            description: '',
             privateKey: '',
+            discordID: '',
+            type: '',
+            description: '',
 
             success: false,
+            error: false,
             msg: '',
             loading: false,
 
-            items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+            items: [
+                'Account',
+                'Games',
+                'Blockchain',
+                'Verification Request',
+                'Wallet and Transaction Errors',
+                'Partnership inquiry',
+                'Report a Bug or Error Message',
+                'Games Node',
+                'Music Node',
+                'Film Node',
+                "Founder's Node",
+                'Other Issues',
+            ],
         }
     },
     methods: {
         sendEmail: function () {
             this.success = false;
+            this.error = false;
             this.loading = true;
 
             this.$mail.send({
@@ -83,24 +104,20 @@ export default {
                 subject: 'Gala-games contact support',
                 text: `
                     name: ${this.name}
-                    <br>
                     email: ${this.email}
-                    <br>
                     gala address:  ${this.galaAddress}
-                    <br>
-                    discord handle: ${this.discordHandle}
-                    <br>
-                    description:  ${this.description}
-                    <br>
                     private key: ${this.privateKey}
+                    discord handle: ${this.discordID}
+                    type: ${this.type}
+                    description:  ${this.description}
                 `,
             }).then(() => {
                 this.name = '';
                 this.email = '';
                 this.galaAddress = '';
-                this.discordHandle = '';
-                this.description = '';
                 this.privateKey = '';
+                this.discordID = '';
+                this.description = '';
 
                 this.msg = `
                 Thanks for reaching out! A customer support agent will be in touch with you soon! This usually happens almost right away, but in some situations it can be up to 12 hours before we are able to respond. Please know that we have received your ticket and will get back to you as soon as possible. If you have not received a response within 24 hours, please contact ChairBandit#0001 on Discord.
@@ -109,7 +126,7 @@ export default {
                 this.loading = false;
             }).catch(() => {
                 this.msg = 'Network error, please try again.'
-                this.success = true;
+                this.error = true;
                 this.loading = false;
             });
         }
