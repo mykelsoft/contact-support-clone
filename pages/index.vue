@@ -1,19 +1,16 @@
 <template>
-    <div class="v-application app-wrapper v-application--is-ltr">
+    <div data-app class="v-application app-wrapper v-application--is-ltr">
         <div class="v-application--wrap">
             <AppHeader />
             <AppContent />
             <AppFooter />
-            <div
-                class="v-bottom-navigation v-item-group theme--dark v-bottom-navigation--fixed modalBackground accentLight--text"
-                style="height: 56px; transform: none"
-            >
+            <div class="v-bottom-navigation v-item-group theme--dark v-bottom-navigation--fixed modalBackground accentLight--text">
                 <a
-                    href="https://app.gala.games/about"
+                    href="https://app.gala.games/"
                     class="bottom-nav-btn v-btn v-btn--flat v-btn--router v-btn--text theme--dark v-btn--active v-size--default accentBlueDark--text"
                     style="min-width: auto">
                     <span class="v-btn__content">
-                        <span class="bottom-nav-title">About</span>
+                        <span class="bottom-nav-title">Home</span>
                         <i
                             aria-hidden="true"
                             class="v-icon notranslate mb-1 fas fa-home theme--dark"
@@ -62,13 +59,7 @@
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 174.5 109.47"
-                                class="games-icon v-icon__component theme--dark"
-                                style="
-                                    font-size: 32px;
-                                    height: 32px;
-                                    width: 32px;
-                                "
-                            >
+                                class="games-icon v-icon__component theme--dark">
                                 <title>icon_games</title>
                                 <path
                                     d="M918.81,1350.91c-12.14,0-22.31-5.4-24.49-13.92-2-7.71-14.86-14.23-28.11-14.23h-4.87c-13.26,0-26.13,6.52-28.11,14.23-2.73,10.63-17.89,16.42-33.81,12.89a29.75,29.75,0,0,1-18.91-13.25,26.27,26.27,0,0,1-3.16-20.42L791.5,1261c2.86-10,14.16-18.79,25.21-19.58.12,0,.34,0,9.54,0h75c9.19,0,9.39,0,9.5,0,11.06.79,22.38,9.55,25.24,19.52l2.08,8.12h0l.09.35c1.13,4.37,12,46.75,12,46.75a26.27,26.27,0,0,1-3.17,20.42,29.76,29.76,0,0,1-18.9,13.25A43.33,43.33,0,0,1,918.81,1350.91Zm-57.47-34.15h4.87c16.32,0,31.22,8.23,33.92,18.74h0c1.9,7.4,14.12,11.31,26.7,8.52a23.72,23.72,0,0,0,15.09-10.53,20.29,20.29,0,0,0,2.46-15.79c-9.45-36.85-11.57-45.1-12-47.12h0l-2.06-8c-2.16-7.51-11.22-14.45-19.79-15.1H817.06c-8.57.65-17.61,7.57-19.77,15.16l-14.13,55.09a20.3,20.3,0,0,0,2.47,15.79A23.67,23.67,0,0,0,800.72,1344c12.57,2.78,24.8-1.12,26.7-8.52C830.11,1325,845,1316.76,861.34,1316.76Z"

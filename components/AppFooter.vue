@@ -1,10 +1,10 @@
 <template>
-    <div class="footer p-3">
-        <div class="md:flex pt-4 lg:pb-4 sm:pb-8 pb-4 lg:px-16">
-            <div class="grow md:pr-16">
-                <div class="main-links flex">
+    <div class="footer pa-3">
+        <div class="d-md-flex pb-lg-4 px-md-16 pb-sm-8 py-4">
+            <div class="grow pr-md-16">
+                <div class="main-links d-sm-flex grid grid-cols-3">
                     <div>
-                        <p class="font-weight-bold mb-2 uppercase">Help</p>
+                        <p class="font-weight-bold mb-2 text-uppercase">Help</p>
                         <a
                             href="https://gala.games/frequently-asked-questions-f-a-qs/"
                             target="_blank"
@@ -18,8 +18,8 @@
                             Contact Support
                         </a>
                     </div>
-                    <div class="mx-12">
-                        <p class="font-weight-bold mb-2 uppercase">
+                    <div class="mx-sm-12">
+                        <p class="font-weight-bold mb-2 text-uppercase">
                             About
                         </p>
                         <a href="https://app.gala.games/about"> About Us </a>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div>
-                        <p class="font-weight-bold mb-2 uppercase">
+                        <p class="font-weight-bold mb-2 text-uppercase">
                             GALA Coin
                         </p>
                         <a href="https://app.gala.games/get-gala"> Get GALA </a>
@@ -50,11 +50,11 @@
                     </div>
                 </div>
             </div>
-            <div class="shrink md:pt-0 pt-6">
-                <p class="font-weight-bold mb-2 uppercase">
+            <div class="shrink py-md-0 pt-6 pb-sm-4">
+                <p class="font-weight-bold mb-2 text-uppercase">
                     Join Our Community
                 </p>
-                <div class="social md:grid grid-cols-5 sm:flex grid">
+                <div class="social md:grid grid-cols-5 d-sm-flex grid">
                     <a
                         href="https://twitter.com/GoGalaGames"
                         target="_blank"
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex copywrite-container lg:pl-3">
+        <div class="flex copywrite-container pl-md-3">
             <div class="mr-4 mb-2">
                 <span>&copy; 2021 Gala Games</span> <span class="mx-3 sm:inline-block hidden">•</span>
                 <a href="https://app.gala.games/terms-and-conditions" class="pointer sm:inline-block hidden">
@@ -125,8 +125,8 @@
             </div>
             <div class="language-switch-container mb-2">
                 <p class="mr-2 mb-0">Language:</p>
-                <div class="control flex items-center accentBlue--text font-weight-medium currency-filter-selector mr-4">
-                    <div class="flex justify-between items-center control-text">
+                <div class="control d-flex items-center accentBlue--text font-weight-medium currency-filter-selector mr-md-4">
+                    <div class="d-flex justify-between items-center control-text">
                         <div class="language-info">
                             <span class="flag f-us normal-flag" style="background-image: url('/flags.png');"></span>
                             <p class="option font-weight-regular language-switch-text mb-0">EN</p>

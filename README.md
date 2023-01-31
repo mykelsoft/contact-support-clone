@@ -1,4 +1,4 @@
-# gala-games-clone
+# gala-game
 
 ## Build Setup
 

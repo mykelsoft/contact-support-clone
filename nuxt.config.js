@@ -34,17 +34,12 @@ export default {
                 referrerpolicy: 'no-referrer',
             },
         ],
-        scripts: [
-            {
-                src: "https://smtpjs.com/v3/smtp.js"
-            }
-        ]
     },
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ['@/assets/css/tailwind.css', '@/assets/scss/main.scss'],
+    css: ['@/assets/scss/main.scss'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: ['@/plugins/vuetify.options.js'],
+    plugins: [],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -55,6 +50,8 @@ export default {
         '@nuxtjs/tailwindcss',
         '@nuxt/postcss8',
         '@nuxtjs/google-fonts',
+
+        '@nuxtjs/vuetify'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -117,4 +114,7 @@ export default {
         //     Roboto: [300, 400, 500, 700],
         // },
     },
+    vuetify: {
+        optionsPath: '@/plugins/vuetify.options.js',
+    }
 }

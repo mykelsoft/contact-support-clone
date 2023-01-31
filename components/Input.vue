@@ -1,9 +1,6 @@
 <template>
     <div>
-        <label
-            :for="label"
-            class="mb-2 flex items-center fs-18 font-weight-medium"
-        >
+        <label :for="label" class="mb-2 flex items-center fs-18 font-weight-medium">
             {{ label }}
             <i
                 v-if="required"
