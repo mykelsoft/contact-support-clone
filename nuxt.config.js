@@ -115,5 +115,8 @@ export default {
     },
     vuetify: {
         optionsPath: '@/plugins/vuetify.options.js',
+    },
+    axios: {
+        baseURL: process.env.BASE_URL,
     }
 }

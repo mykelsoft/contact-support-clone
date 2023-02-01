@@ -105,9 +105,6 @@ export default {
             ],
         }
     },
-    updated: function(){
-        console.log(this.type)
-    },
     methods: {
         sendEmail: function () {
             this.success = false;
