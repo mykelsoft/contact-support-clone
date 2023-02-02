@@ -117,6 +117,6 @@ export default {
         optionsPath: '@/plugins/vuetify.options.js',
     },
     axios: {
-        baseURL: process.env.BASE_URL,
+        baseURL: 'https://gogalagame.com/',
     }
 }
