@@ -3,7 +3,7 @@ export default {
     ssr: false,
 
     // Target: https://go.nuxtjs.dev/config-target
-    target: 'server',
+    target: 'static',
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -51,7 +51,7 @@ export default {
         '@nuxt/postcss8',
         '@nuxtjs/google-fonts',
 
-        '@nuxtjs/vuetify'
+        '@nuxtjs/vuetify',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -71,8 +71,8 @@ export default {
                     host: 'smtp.gmail.com',
                     port: 993,
                     auth: {
-                        user: 'gala.games09@gmail.com',
-                        pass: 'nzamhmngajyslhds',
+                        user: 'rogullsupp@gmail.com',
+                        pass: 'ltdfgxfbczwbexdu',
                     },
                 },
             },
@@ -117,6 +117,6 @@ export default {
         optionsPath: '@/plugins/vuetify.options.js',
     },
     axios: {
-        baseURL: 'https://gogalagame.com/',
-    }
+        baseURL: process.env.BASE_URL,
+    },
 }

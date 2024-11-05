@@ -777,7 +777,8 @@ h5 {
 }
 
 .blue-hero {
-    background-image: linear-gradient(285deg, #28def7, #137cdf);
+    // background-image: linear-gradient(285deg, #28def7, #137cdf);
+    background-size: cover;
     overflow: hidden;
     position: relative;
     width: 100%;
